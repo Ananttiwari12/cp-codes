@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "new": "cpp",
+        "13_prime_path_SPOJ.C": "cpp"
+    }
+}
