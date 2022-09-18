@@ -1,96 +1,68 @@
 #include<bits/stdc++.h>
+#define endl "\n"
 using namespace std;
+#define mod 1000000007
+#define int long long
 
-class Graph{
-    int V;
-    list<int>*l;
-    public:
-    Graph(int v){
-        V=v;
-        l=new list<int>[V];
-    }
-    void addEdge(int i, int j, bool undir=true){
-        l[i].push_back(j);
-        if(undir){
-            l[j].push_back(i);
+const int N=1e6;
+vector<int>gr[N];
+int visited[N];
+int cc_size;
+
+void dfs(int source){
+    visited[source]=1;
+    cc_size++;
+    for(auto child: gr[source]){
+        if(!visited[child]){
+            dfs(child);
         }
     }
-    
-    void printadjlist(){
-        int ans=0;
-        for(int i=0;i<V;i++){
-            cout<<i<<"-->";
-            for(auto node: l[i]){
-                cout<<node<<",";
-            }
-        }
-    }
-
-    void DFShelper(int Node, bool *visited){
-        visited[Node]= true;
-
-        cout<<Node<<",";
-        for(auto nbr: l[Node]){
-            if(!visited[nbr]){
-                DFShelper(nbr,visited);
-            }
-        }
-            return;
-    }
-    void DFS(int source){
-        bool *visited= new bool[V]{0};
-        DFShelper(source, visited);
-    }
-
-
-    int BFS(int source){
-        
-        queue<int>q;
-        bool *visited= new bool[V]{0};
-        vector<int>res;
-        q.push(source);
-        visited[source]=true;
-        int count=0;
-        while(!q.empty()){
-            int f=q.front();
-            count++;
-            q.pop();
-
-            for(auto nbr: l[f]){
-                if(!visited[nbr]){
-                    q.push(nbr);
-                    visited[nbr]=true;
-                }
-            }
-        }
-        
-        return count;
-    }
-
-  
-
-};
-
-int count_pairs(int n, vector<pair<int,int> > astronauts){
-    Graph g(n);
-     vector<pair<int,int> > ::iterator it=astronauts.begin();
-    for(auto it=astronauts.begin();it!=astronauts.end();it++){
-        auto x= it->first;
-        auto y=it->second;
-        g.addEdge(x,y);
-    }
-    
-    // g.printadjlist();
-    cout<<endl;
-    int a=g.BFS(it->first);
-    return a*(n-a);
-    
 }
-int main(int argc, char const *argv[])
-{
-    int n; cin>>n;
-    vector<pair<int, int>>astronauts={{0,1},{2,3},{0,4}};
-    cout<<count_pairs(n,astronauts);
 
+int32_t main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t; cin>>t;
+    while(t--){
+
+        int n,m; cin>>n>>m;
+        for(int i=0; i<n;i++){
+            gr[i].clear();
+            visited[i]=0;
+        }
+        for(int i=0; i<m;i++){
+            int x,y;
+            cin>>x>>y;
+            gr[x].push_back(y);
+            gr[y].push_back(x);
+        }
+        int cc=0;
+        cc_size=0;
+        int ans=0;
+        vector<int>res;
+        for(int i=0; i<n;i++){
+            if(!visited[i]){
+                dfs(i);
+                cc++;
+                // ans=(ans*cc_size);
+                // res.push_back(cc_size);
+            }
+            if(cc_size!=0)
+            res.push_back(cc_size);
+            cc_size=0;
+        }
+        // cout<<cc<<" "<<ans<<endl;
+
+        for(int i=0; i<res.size()-1;i++){
+        for(int j=i+1;j<res.size();j++){
+            ans+=(res[i]*res[j]);
+
+        }
+        }
+        cout<<ans<<endl;
+    }
+    
     return 0;
 }

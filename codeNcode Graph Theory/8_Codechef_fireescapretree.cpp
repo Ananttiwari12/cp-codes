@@ -28,7 +28,7 @@ int32_t main(){
     while(t--){
 
         int n,m; cin>>n>>m;
-        for(int i=0; i<n;i++){
+        for(int i=1; i<=n;i++){
             gr[i].clear();
             visited[i]=0;
         }
