@@ -7,6 +7,8 @@
         "vector": "cpp",
         "ostream": "cpp",
         "new": "cpp",
-        "13_prime_path_SPOJ.C": "cpp"
+        "13_prime_path_SPOJ.C": "cpp",
+        "deque": "cpp",
+        "string": "cpp"
     }
 }
