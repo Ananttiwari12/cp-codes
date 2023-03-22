@@ -32,12 +32,6 @@ int32_t main(){
     for(int i=1;i<=n;i++) cin>>v[i];
 
     cout<<frogs(n);
-
-
-
-
-
-    
     
     return 0;
 }

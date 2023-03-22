@@ -9,11 +9,9 @@ int values[100];
 int w[100]; int memo[100][100001];
 
 int knapsack(int idx, int weight){
-
     if(idx>=n)return 0;
 
     int &ans=memo[idx][weight];
-
     if(ans!=-1) return ans;
 
     // do not take weight
@@ -23,7 +21,6 @@ int knapsack(int idx, int weight){
     if(weight+w[idx]<=W){
         ans=max(ans,values[idx]+knapsack(idx+1,weight+w[idx]));
     }
-    
     return ans;
 }
 
@@ -42,12 +39,6 @@ int32_t main(){
     memset(memo,-1,sizeof(memo));
 
     cout<<knapsack(0,0);
-
- 
-   
-
-
-
     
     return 0;
 }

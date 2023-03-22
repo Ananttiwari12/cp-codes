@@ -15,7 +15,6 @@ bool dfs(int src, int par){
     cycle.push_back(src);
     for(auto child:gr[src]){
         
-
         if(visited[child]!=1){
             if(dfs(child,src)==true)return true;
         }
@@ -30,14 +29,12 @@ bool dfs(int src, int par){
         return false;
 }
 
-
 int32_t main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
     int n,m; cin>>n>>m;
-
 
     for(int i=1;i<=n;i++){
         visited[i]=0;
@@ -75,7 +72,6 @@ int32_t main(){
         cout<<ans[i]<<" ";
     }
     }
-
 
     else cout<<"IMPOSSIBLE\n";
     

@@ -12,6 +12,7 @@ int color[N];
 bool dfs(int source, int c){
     visited[source]=1;
     color[source]=c;
+    
     for(auto child : gr[source]){
         if(!visited[child]){
             if(dfs(child, c^1)==false)return false;

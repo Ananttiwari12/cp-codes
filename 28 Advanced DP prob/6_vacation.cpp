@@ -8,8 +8,6 @@ const int N=100000;
 int a[N][3];
 int dp[N][3];
 
-
-
 int32_t main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -40,22 +38,6 @@ int32_t main(){
         ans=max(ans,dp[n-1][i]);
     }
     cout<<ans<<endl;
-
-   
-   
-
-
-
-
-  
-
-
-
-
-    
-    
-
-
-    
+ 
     return 0;
 }

@@ -10,7 +10,7 @@ using namespace std;
 
 void towerofHanoi(int n, char from, char helper, char to){
 
-    if(n==-0) return;
+    if(n==0) return;
 
     // cout<<n<<" "<<from<<" "<<helper<<" "<<to<<endl;
     towerofHanoi(n-1,from,to,helper);

@@ -4,9 +4,9 @@ using namespace std;
 #define mod 1000000007
 #define int long long
 
+    vector<int>dp(100001,1);
 int LIS(vector<int>arr,int n){
     
-    vector<int>dp(n,1);
     int len=1;
     for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
@@ -17,7 +17,6 @@ int LIS(vector<int>arr,int n){
         }
     }
     return len;
-
 }
 
 int32_t main(){

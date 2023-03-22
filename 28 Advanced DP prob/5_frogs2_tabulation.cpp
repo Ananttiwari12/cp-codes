@@ -28,9 +28,6 @@ int32_t main(){
         dp[i]=ans;
     }
     cout<<dp[n];
-
-
-    
     
     return 0;
 }

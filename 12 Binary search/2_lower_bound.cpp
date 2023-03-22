@@ -56,7 +56,7 @@ int main(){
     int key; cin>>key;
 
     cout<<lower_occurences(arr,key)<<endl;
-    cout<<upper_occurences(arr,key);
+    cout<<upper_occurences(arr,key)-lower_occurences(arr,key);
 
     return 0;
 }

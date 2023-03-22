@@ -30,8 +30,5 @@ int32_t main(){
 
     cout<<frogs(n-1);
 
-
-
-    
     return 0;
 }
