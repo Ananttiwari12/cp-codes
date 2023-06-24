@@ -29,7 +29,7 @@ void dfs(int cur, int par){
 }
 
 int LCA(int u, int v){
-    if(dept[u]<dept[v]) swap(u,v); // now u and v are equal
+    if(dept[u]<dept[v]) swap(u,v);
     int diff= dept[u]-dept[v];
 
     // making u and v on the same level

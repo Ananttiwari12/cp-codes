@@ -1,7 +1,21 @@
+10
+10
+codeforces
 3
-5
-8 4 2 5 2
-6
-7 9 -10 8 12 17
+abc
+10
+taarrrataa
+10
+dcbdbdcccc
 4
-0 -3 -1 -10
+wwww
+12
+cabbaccabaac
+10
+aadaaaaddc
+14
+aacdaaaacadcdc
+6
+abccba
+12
+dcbcaebacccd

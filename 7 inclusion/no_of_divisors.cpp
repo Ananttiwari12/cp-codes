@@ -9,8 +9,13 @@ int32_t main(){
     cout.tie(NULL);
     
     int n;cin>>n;
-    vector<int>primes={2,3,5,7,11,13,17,19,23,29};
-    int m=primes.size();
+    vector<int>primes;
+    int m; cin>>m;
+    for(int i=0;i<m;i++){
+        int x; cin>>x;
+        primes.push_back(x);
+    }
+    
 
     int ans=0;
 

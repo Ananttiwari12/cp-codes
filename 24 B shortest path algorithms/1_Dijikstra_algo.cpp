@@ -38,7 +38,7 @@ int dijikstra(int src, int dest, int n){
         }
     }
     for(int i=0;i<n;i++){
-        cout<<"Dist of "<<i<<" "<<dist[i]<<endl;;
+        cout<<dist[i]<<endl;;
     }
     return dist[dest];
 }
@@ -58,7 +58,7 @@ int32_t main(){
         gr[y].push_back({w,x}); //assuming undirected graph 
     } 
     int a,b; cin>>a>>b;
-    cout<<dijikstra(a,b,n)<<endl;
+    cout<<dijikstra(a,b,1)<<endl;
 
     return 0;
 }

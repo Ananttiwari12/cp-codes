@@ -70,7 +70,7 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
 
-    vector<int> a{0,5,2,3,1};
+    vector<int> a{2,4,1,3,5};
     int s=0;
     int e=a.size()-1;
 
