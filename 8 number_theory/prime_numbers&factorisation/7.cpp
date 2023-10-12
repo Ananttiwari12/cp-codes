@@ -11,7 +11,7 @@ int main(){
     int n;
     vector<int>v(n);
     v[0]=1;
-    for(int i=1;i<n-1;i++){
+    for(int i=1;i<n-1;i++){ 
         if(n%(i+1)==0){
             v[i]=i+1;
         }

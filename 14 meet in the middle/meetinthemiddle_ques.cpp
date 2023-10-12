@@ -3,20 +3,18 @@ using namespace std;
 #define ll long long
 
 vector<ll> subsetsum (vector<ll>a){
-
-vector<ll> result;
-int n=a.size();
-
-for(ll i=0;i<(1<<n);i++){
-    ll sum=0;
-    for(ll j=0;j<n;j++){
-        if((i>>j)&1){
-            sum+=a[j];
+    vector<ll> result;
+    int n=a.size();
+    for(ll i=0;i<(1<<n);i++){
+        ll sum=0;
+        for(ll j=0;j<n;j++){
+            if((i>>j)&1){
+                sum+=a[j];
+            }
         }
-    }
         result.push_back(sum);
-}
-return result;
+    }
+    return result;
 }
 
 long long solve(int n,int x, vector<int> a){
@@ -37,9 +35,9 @@ long long solve(int n,int x, vector<int> a){
     sort(rightsums.begin(),rightsums.end());
     ll ans=0;
     for(auto k: leftsums){
-     for(auto y: rightsums){
-         if(k+y==x) ans++;
-     }
+        for(auto y: rightsums){
+            if(k+y==x) ans++;
+        }
     }
     return ans;
 }
